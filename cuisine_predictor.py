@@ -17,14 +17,6 @@ def predict_cuisine(ingredients):
 st.subheader('Ingredients')
 # st.write('Enter the ingredients you have')
 
-def file_selector(folder_path='./img'):
-    filenames = os.listdir(folder_path)
-    selected_filename = st.selectbox('Select a file', filenames)
-    return os.path.join(folder_path, selected_filename)
-
-filename = file_selector()
-st.write('You selected `%s`' % filename)
-
 col1, col2, col3 = st.columns(3)
 with col1:
     i1 = st.text_input('', key='i1')
@@ -53,7 +45,7 @@ if predict_button:
     else:
         cuisine = predict_cuisine(ingredients)[0].title()
         st.header(cuisine.title())
-        st.image(f'./img/{cuisine}.jpeg', width=300)
+        st.image(os.path.join(os.path.dirname(os.path.abspath(__file__)),f'img/{cuisine}.jpeg'), width=300)
 
 
 
