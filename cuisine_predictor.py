@@ -48,7 +48,7 @@ if predict_button:
         try:
             st.image(os.path.join(os.path.dirname(os.path.abspath(__file__)),f'img/{cuisine}.jpeg'), width=300)
         except FileNotFoundError:
-            print(f'Could not find image for {cusine}')
+            print(f'Could not find image for {cuisine}')
 
 
 
