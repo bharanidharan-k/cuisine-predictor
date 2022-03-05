@@ -45,7 +45,10 @@ if predict_button:
     else:
         cuisine = predict_cuisine(ingredients)[0].title()
         st.header(cuisine.title())
-        st.image(os.path.join(os.path.dirname(os.path.abspath(__file__)),f'img/{cuisine}.jpeg'), width=300)
+        try:
+            st.image(os.path.join(os.path.dirname(os.path.abspath(__file__)),f'img/{cuisine}.jpeg'), width=300)
+        except FileNotFoundError:
+            println(f'Could not find image for {cusine}')
 
 
 
