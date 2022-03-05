@@ -45,7 +45,7 @@ if predict_button:
     else:
         cuisine = predict_cuisine(ingredients)[0].title()
         st.header(cuisine.title())
-        st.image(f'/app/cuisine-predictor/img/{cuisine}.jpeg', width=300)
+        st.image(f'./img/{cuisine}.jpeg', width=300)
 
 
 
