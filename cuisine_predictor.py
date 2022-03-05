@@ -17,7 +17,7 @@ def predict_cuisine(ingredients):
 st.subheader('Ingredients')
 # st.write('Enter the ingredients you have')
 
-col1, col2, col3 = st.beta_columns(3)
+col1, col2, col3 = st.columns(3)
 with col1:
     i1 = st.text_input('', key='i1')
     i2 = st.text_input('', key='i2')
