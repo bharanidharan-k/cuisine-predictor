@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import re
+import re, os
 
 @st.cache(suppress_st_warning=True,allow_output_mutation=True)
 def load_cuisine_predictor():
@@ -16,6 +16,14 @@ def predict_cuisine(ingredients):
 
 st.subheader('Ingredients')
 # st.write('Enter the ingredients you have')
+
+def file_selector(folder_path='.'):
+    filenames = os.listdir(folder_path)
+    selected_filename = st.selectbox('Select a file', filenames)
+    return os.path.join(folder_path, selected_filename)
+
+filename = file_selector()
+st.write('You selected `%s`' % filename)
 
 col1, col2, col3 = st.columns(3)
 with col1:
